@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const Todo = () => {
+const Main = () => {
   return (
     <main className=" flex flex-col items-center max-w-screen-lg w-full">
       <h2 className="text-center text-2xl font-medium mb-4">O que você tem pra fazer?</h2>
@@ -19,4 +19,4 @@ const Todo = () => {
   );
 };
 
-export default Todo;
+export default Main;
