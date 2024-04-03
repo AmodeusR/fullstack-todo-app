@@ -1,15 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 
 type FormType = {
   addTodo: (formData: FormData) => Promise<void>;
 }
 
 const Form = ({ addTodo }: FormType) => {
+  const formRef = useRef<HTMLFormElement>(null);
 
   return (
-    <form action={addTodo} className="flex w-11/12 gap-1 mb-8">
+    <form ref={formRef} action={async formData => {
+      addTodo(formData);
+      formRef.current?.reset();
+    }} className="flex w-11/12 gap-1 mb-8">
       <input
         type="text"
         className="grow p-2 outline-none border-2 rounded text-sm focus:border-blue-400 transition-colors"
