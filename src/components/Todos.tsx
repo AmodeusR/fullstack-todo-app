@@ -8,7 +8,7 @@ type Todos = {
 const Todos = ({ todos }: Todos) => {
   return (
     <ul className="w-11/12 flex flex-col">
-      {todos.map(todo => <Todo key={todo.id} id={todo.id} description={todo.description} />)}
+      {todos.reverse().map(todo => <Todo key={todo.id} id={todo.id} description={todo.description} />)}
     </ul>
   );
 };
