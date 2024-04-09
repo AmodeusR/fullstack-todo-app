@@ -7,7 +7,7 @@ export const addTodo = async (formData: FormData) => {
   "use server";
   
   // Simulates delay
-  await new Promise(resolve => setTimeout(resolve, 3000));
+  // await new Promise(resolve => setTimeout(resolve, 2000));
 
   const description = formData.get("description");
   await db.todo.create({
