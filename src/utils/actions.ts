@@ -3,6 +3,22 @@
 import { revalidatePath } from "next/cache"
 import { db } from "./db";
 
+export const addTodo = async (formData: FormData) => {
+  "use server";
+  
+  // Simulates delay
+  await new Promise(resolve => setTimeout(resolve, 3000));
+
+  const description = formData.get("description");
+  await db.todo.create({
+    data: {
+      description: description as string
+    }
+  })
+
+  revalidatePath("/todos");
+}
+
 export const updateTodo = async (id: string, updatedText: string) => {
   await db.todo.update({
     where: {
