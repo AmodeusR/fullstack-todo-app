@@ -4,8 +4,7 @@ import Header from "@/components/Header";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center gap-10">
-      <Header />
+    <div className="flex min-h-screen flex-col items-center">
       <Main />
     </div>
   );
