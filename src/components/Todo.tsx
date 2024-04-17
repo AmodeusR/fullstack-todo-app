@@ -13,7 +13,6 @@ const Todo = ({ id, description }: TodoType) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleUpdate = () => {
-    setUpdatedText(description);
     if (updatedText.length <= 0) {
       alert("O texto precisa ter mais de um caractere!");
       return;
@@ -44,6 +43,7 @@ const Todo = ({ id, description }: TodoType) => {
             <button
               onClick={() => {
                 setIsEditOpen(true);
+                setUpdatedText(description);
                 setTimeout(() => inputRef.current?.focus(), 0);
               }}
               className="hover:text-blue-400 transition-colors"
