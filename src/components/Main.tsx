@@ -9,7 +9,7 @@ const Main = async () => {
 
 
   return (
-    <main className=" flex flex-col items-center max-w-screen-lg w-full">
+    <main className=" flex flex-col items-center max-w-screen-lg w-full mt-10">
       <h2 className="text-center text-2xl font-medium mb-4">O que você tem pra fazer?</h2>
       <Form />
       <Todos todos={todos} />
